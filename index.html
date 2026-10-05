@@ -10,6 +10,15 @@
   <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
   <meta name="apple-mobile-web-app-title" content="miya小手机">
   <title>Miya</title>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/mingruis-miya/sw.js')
+    .then(reg => console.log('SW注册成功', reg))
+    .catch(err => console.error('SW注册失败', err));
+  });
+}
+</script>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="img/miya-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="img/miya-icon.png">
